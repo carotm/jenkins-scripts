@@ -14,3 +14,13 @@ def creds1 = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredent
         null );
 for (c in creds1) { 
 	println(c.id + '|' + c.secret) 
+}
+
+def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey,
+        Jenkins.instance, 
+        null, 
+        null );
+for (c in creds) { 
+	println(c.id + " | " + c.username + " | " + c.privateKey) 
+}
